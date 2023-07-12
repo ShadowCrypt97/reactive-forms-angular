@@ -1,0 +1,64 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <form [formGroup]="userModel" class="row col-8 g-3">
+                <div class="col-md-6">
+                    <label for="inputName" class="form-label"
+                        [class.is-invalid]="nameControl.touched && nameControl.invalid">Name</label>
+                    <input formControlName="name" type="text" class="form-control" id="inputName" />
+                    <div id="inputName" class="invalid-feedback">
+                        {{validateName()}}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputSurname" class="form-label">Surname</label>
+                    <input formControlName="surname" type="text" class="form-control" id="inputSurname" />
+                </div>
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label"
+                        [class.is-invalid]="emailControl.touched && emailControl.invalid">Email</label>
+                    <input formControlName="email" type="email" class="form-control" id="inputEmail4" />
+                    <div id="inputEmail4" class="invalid-feedback">
+                        {{validateEmail()}}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label"
+                        [class.is-invalid]="passwordControl.touched && passwordControl.invalid">Password</label>
+                    <input formControlName="password" type="password" class="form-control" id="inputPassword4" />
+                    <div id="inputPassword4" class="invalid-feedback">
+                        {{validatePassword()}}
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCountry" class="form-label"
+                        [class.is-invalid]="countryControl.touched && countryControl.invalid">Country</label>
+                    <input formControlName="country" type="text" class="form-control" id="inputCountry" />
+                    <div id="inputCountry" class="invalid-feedback">
+                        {{validateCountry()}}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">City</label>
+                    <input formControlName="city" type="text" class="form-control" id="inputCity" />
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck" />
+                        <label class="form-check-label" for="gridCheck">
+                            Check me out
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </div>
+            </form>
+            <div class="col-4">
+                <h5>Valor</h5>
+                <pre>{{ userModel.value | json }}</pre>
+            </div>
+        </div>
+    </div>
+</div>
